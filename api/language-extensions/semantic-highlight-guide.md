@@ -36,7 +36,7 @@ To implement semantic highlighting, language extensions can register a `semantic
 ```ts
 const tokenTypes = ['class', 'interface', 'enum', 'function', 'variable'];
 const tokenModifiers = ['declaration', 'documentation'];
-const legend = new vscode.SemanticTokensLegend(tokenTypes, tokenModifiers);
+const legend: vscode.SemanticTokensLegend = { tokenTypes, tokenModifiers };
 
 const provider: vscode.DocumentSemanticTokensProvider = {
   provideDocumentSemanticTokens(document: vscode.TextDocument): vscode.ProviderResult<vscode.SemanticTokens> {
